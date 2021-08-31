@@ -3,6 +3,3 @@ djangorestframework
 django-filter
 psycopg2
 python-dotenv
-pytest
-pytest-django
-model_bakery
