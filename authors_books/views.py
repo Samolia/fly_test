@@ -25,5 +25,5 @@ class BookViewSet(ModelViewSet):
 
 class Books(ListView):
     model = Book
-    template_name = template = 'books/books_list.html'
+    template_name = 'books/books_list.html'
     queryset = Book.objects.prefetch_related('author')
