@@ -89,8 +89,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'fly_test',
-        'USER': DATABASE_USER,
-        'PASSWORD': DATABASE_PASSWORD,
+        'USER': 'samolia',
+        'PASSWORD': 'samolia',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
