@@ -96,7 +96,7 @@ DATABASES = {
         'HOST': os.getenv('DATABASE_HOST', '127.0.0.1'),
         'PORT': os.getenv('DATABASE_PORT', '5432'),
         'TEST': {
-            'NAME': 'test',
+            'NAME': 'fly_test',
         }
     }
 }
