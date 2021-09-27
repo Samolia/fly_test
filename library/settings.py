@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import sys
+
 import django_heroku
 from pathlib import Path
 from dotenv import load_dotenv
@@ -84,17 +86,20 @@ WSGI_APPLICATION = 'library.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('DATABASE_NAME', 'test_db'),
-        'USER': os.getenv('DATABASE_USER', 'admin'),
-        'PASSWORD': os.getenv('DATABASE_PASSWORD', 'admin'),
-        'HOST': os.getenv('DATABASE_HOST', '127.0.0.1'),
-        'PORT': os.getenv('DATABASE_PORT', '5432'),
+if 'test' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.getenv('DATABASE_NAME', 'test_db'),
+            'USER': os.getenv('DATABASE_USER', 'admin'),
+            'PASSWORD': os.getenv('DATABASE_PASSWORD', 'admin'),
+            'HOST': os.getenv('DATABASE_HOST', '127.0.0.1'),
+            'PORT': os.getenv('DATABASE_PORT', '5432'),
+            'TEST': {
+                'NAME': 'test',
+            }
+        }
     }
-}
 
 # DATABASES = {
 #     'default': {
