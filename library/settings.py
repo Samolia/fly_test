@@ -92,12 +92,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.getenv('DATABASE_NAME', 'test_db'),
         'USER': os.getenv('DATABASE_USER', 'admin'),
+        'TEST': {
+            'MIRROR': 'default',
+                },
         'PASSWORD': os.getenv('DATABASE_PASSWORD', 'admin'),
         'HOST': os.getenv('DATABASE_HOST', '127.0.0.1'),
         'PORT': os.getenv('DATABASE_PORT', '5432'),
-        'TEST': {
-            'NAME': 'fly_test',
-        }
     }
 }
 
